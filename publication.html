@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication | Dr. Ghosh</title>
+    <link rel="stylesheet" href="publication.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2>Dr. Ghosh's Pandey</h2>
+    </div>
+    <div class="tabs">
+        <div class="tab">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="tab">
+            <a href="/publication.html" target="_blank">Publication</a>
+        </div>
+        <div class="tab">
+            <a href="/student.html" target="_blank">Student</a>
+        </div>
+        <div class="tab">
+            <a href="/project.html" target="_blank">Project</a>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div id="publication" class="publication-section active">
+            <h2>Publications</h2>
+            <h3>National/International Conferences</h3>
+            <div class="publication">
+                <p><strong>Name of Authors:</strong> S. M. Mefire</p>
+                <p><strong>Title of publication:</strong> Static regime imaging of certain 3D electromagnetic
+                    imperfections from a boundary perturbation formula</p>
+                <p><strong>Name of the journal/conference:</strong> J. Comput. Math.</p>
+                <p><strong>Vol. no:</strong> 32</p>
+                <p><strong>Issue no:</strong> 4</p>
+                <p><strong>Page number:</strong> 412–441</p>
+                <p><strong>Year of publication:</strong> Jul. 2014</p>
+                <p><strong>DoI:</strong> 10.4208/jcm.1401-m4214</p>
+            </div>
+            <!-- Add more publications as needed -->
+        </div>
+
+        <div id="student" class="publication-section">
+            <h2>Student</h2>
+            <!-- Student content goes here -->
+        </div>
+
+        <div id="project" class="publication-section">
+            <h2>Project</h2>
+            <!-- Project content goes here -->
+        </div>
+    </div>
+
+    <div class="edit-profile">
+        <button onclick="showLoginModal()">Edit Profile</button>
+    </div>
+
+    <div id="loginModal" class="login-modal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <input type="text" id="userId" placeholder="User-id (Email)">
+            <input type="password" id="password" placeholder="Password">
+            <div style="display: flex; justify-content: space-between;">
+                <button onclick="submitLogin()">Submit</button>
+                <button onclick="resetLogin()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.publication-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector(`[onclick="showSection('${section}')"]`).classList.add('active');
+            document.getElementById(section).classList.add('active');
+        }
+
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function submitLogin() {
+            // Implement login logic here
+            alert('Login submitted');
+        }
+
+        function resetLogin() {
+            document.getElementById('userId').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        document.getElementById('loginModal').addEventListener('click', function (event) {
+            if (event.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
